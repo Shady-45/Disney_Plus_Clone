@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+import { FaDonate } from "react-icons/fa";
 import movieData from "./movieData";
 import { useParams } from "react-router-dom";
 
@@ -35,9 +36,7 @@ const Detail = (props) => {
             <span></span>
           </AddList>
           <GroupWatch>
-            <div>
-              <img src="/images/group-icon.png" alt="" />
-            </div>
+            <img src="/images/group-icon.png" alt="" />
           </GroupWatch>
         </Controls>
         <SubTitle>{detailData.subTitle}</SubTitle>
@@ -178,6 +177,7 @@ const GroupWatch = styled.div`
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  color: black;
   background: white;
   div {
     height: 40px;
@@ -198,7 +198,10 @@ const SubTitle = styled.div`
     font-size: 12px;
   }
 `;
-
+const Donation = styled.div`
+  height: 44px;
+  margin-left: 12px;
+`;
 const Description = styled.div`
   line-height: 1.4;
   font-size: 20px;

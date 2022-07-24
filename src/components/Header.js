@@ -1,8 +1,18 @@
 import React from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Header = () => {
+  const [file, setFile] = useState();
+  let [open, setOpen] = useState(true);
+  function handleChange(event) {
+    setFile(event.target.files[0]);
+  }
+
+  /* 
+  open ? <Drop /> : () => console.log("NUll"); */
+
   return (
     <Nav>
       <Logo>
@@ -32,11 +42,34 @@ const Header = () => {
           <span>SERIES</span>
         </a>
       </NavMenu>
+      <Link to="/signin">
+        <SignIn>
+          <DropDown>
+            <span id="sign" onClick={() => (open ? <Drop /> : null)}>
+              SIGN IN
+            </span>
+          </DropDown>
+        </SignIn>
+      </Link>
+
+      <Drop>
+        <ul id="drop">
+          <li>Sign in for creators</li>
+          <li>Sign in for Users</li>
+        </ul>
+      </Drop>
+
       <SignOut>
         <DropDown>
           <span>SIGN OUT</span>
         </DropDown>
       </SignOut>
+      <Forms>
+        <form>
+          <input type="file" onChange={handleChange} />
+          <button type="submit">Upload</button>
+        </form>
+      </Forms>
     </Nav>
   );
 };
@@ -134,4 +167,31 @@ const NavMenu = styled.div`
   }
 `;
 const SignOut = styled.div``;
+const SignIn = styled.div`
+  margin-right: 10px;
+`;
 const DropDown = styled.div``;
+const Drop = styled.div`
+  ul {
+    flex-direction: column;
+    border: 2px solid gray;
+    width: 100%;
+
+    text-align: center;
+    color: white;
+    align-items: center;
+    background-color: black;
+    padding: 0.4rem;
+
+    height: 10vh;
+    margin-top: 7rem;
+  }
+  li {
+    list-style: none;
+    padding: 0.2rem;
+  }
+`;
+const Drop1 = styled.div`
+  display: hidden;
+`;
+const Forms = styled.div``;
