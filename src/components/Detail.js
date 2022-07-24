@@ -36,7 +36,7 @@ const Detail = (props) => {
             <span></span>
           </AddList>
           <GroupWatch>
-            <img src="/images/group-icon.png" alt="" />
+            <button>Donate</button>
           </GroupWatch>
         </Controls>
         <SubTitle>{detailData.subTitle}</SubTitle>
@@ -170,24 +170,17 @@ const AddList = styled.div`
 `;
 
 const GroupWatch = styled.div`
-  height: 44px;
-  width: 44px;
-  border-radius: 50%;
-  display: flex;
+border: 1px solid white;
+padding: -4px;
+letter-spacing: 3px
+
+  
+
   justify-content: center;
   align-items: center;
   cursor: pointer;
   color: black;
   background: white;
-  div {
-    height: 40px;
-    width: 40px;
-    background: rgb(0, 0, 0);
-    border-radius: 50%;
-    img {
-      width: 100%;
-    }
-  }
 `;
 
 const SubTitle = styled.div`
@@ -198,10 +191,7 @@ const SubTitle = styled.div`
     font-size: 12px;
   }
 `;
-const Donation = styled.div`
-  height: 44px;
-  margin-left: 12px;
-`;
+
 const Description = styled.div`
   line-height: 1.4;
   font-size: 20px;

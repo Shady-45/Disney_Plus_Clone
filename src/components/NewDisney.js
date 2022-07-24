@@ -12,7 +12,7 @@ const NewDisney = () => {
   }, []);
   return (
     <Container>
-      <h4>New to Disney</h4>
+      <h4>New to Crypt</h4>
       <Content>
         {newDisney.map((movie, key) => (
           <Wrap key={key}>
